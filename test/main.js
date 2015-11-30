@@ -1,7 +1,7 @@
 var redis = require('redis');
 var cc = require('cache-chain');
 
-describe('Main Tests for cache-chain', function() {
+describe('Main Tests for cache-chain-redis', function() {
 
 	var chain;
 
