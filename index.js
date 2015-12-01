@@ -3,7 +3,7 @@ module.exports = function(client) {
 	function backend(client) {
 
 		this.set = function(key, value, options, cb) {
-			client.set(key, JSON.stringify(value), 'NX', 'PX', options.ttl, function(err, reply) {
+			client.set(key, JSON.stringify(value), 'PX', options.ttl, function(err, reply) {
 				if(err) {
 					cb(err);
 				} else {
