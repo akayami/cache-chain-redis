@@ -1,5 +1,5 @@
 var redis = require('redis');
-var cc = require('cache-chain');
+var cc = require('../../cache-chain');
 
 describe('Main Tests for cache-chain-redis', function() {
 
@@ -62,7 +62,7 @@ describe('Main Tests for cache-chain-redis', function() {
 					} else {
 						chain.get(key, function(err, reply) {
 							if (err) {
-								if (err.message == "Key not found") {
+								if(err instanceof cc.error.notFound) {
 									done();
 								} else {
 									done('Wrong error message returned');
@@ -90,7 +90,7 @@ describe('Main Tests for cache-chain-redis', function() {
 				setTimeout(function() {
 					chain.get(key, function(err, reply) {
 						if (err) {
-							if (err.message == "Key not found") {
+							if(err instanceof cc.error.notFound) {
 								done();
 							} else {
 								done('Wrong error message returned');

@@ -1,3 +1,5 @@
+var cacheChain = require('../cache-chain');
+
 module.exports = function(client) {
 
 	function backend(client) {
@@ -17,7 +19,7 @@ module.exports = function(client) {
 				if(err) {
 					cb(err);
 				} else if (reply === null) {
-					cb(new Error('Key not found'));
+					cb(new cacheChain.error.notFound);
 				} else {
 					cb(null, JSON.parse(reply));
 				}
