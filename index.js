@@ -17,7 +17,7 @@ module.exports = function(client) {
 		this.get = function(key, options, cb) {
 			client.get(key, function(err, reply) {
 				if(err) {
-					cb(err);
+					cb(new cacheChain.error.failedToRefresh);
 				} else if (reply === null) {
 					cb(new cacheChain.error.notFound);
 				} else {
