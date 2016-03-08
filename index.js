@@ -1,4 +1,4 @@
-var cacheChain = require('../cache-chain');
+var cacheChain = require('cache-chain');
 
 module.exports = function(client) {
 

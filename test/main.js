@@ -4,7 +4,7 @@ describe('Main Tests for cache-chain-redis', function() {
 
 	var di = {
 		chain: null,
-		cc: require('../../cache-chain')
+		cc: require('cache-chain')
 	}
 
 	beforeEach(function(done) {
@@ -18,6 +18,6 @@ describe('Main Tests for cache-chain-redis', function() {
 		done();
 	});
 
-	require('../../cache-chain/test/integration')(di);
+	require('cache-chain/test/integration')(di);
 
 });
